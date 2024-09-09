@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Écran de Verrouillage</title>
+</head>
+<body>
+    <div class="lock-screen">
+        <h1>Entrez le code</h1>
+        <input type="password" id="code-input" maxlength="4" readonly>
+        <div class="keypad">
+            <button onclick="enterDigit(1)">1</button>
+            <button onclick="enterDigit(2)">2</button>
+            <button onclick="enterDigit(3)">3</button>
+            <button onclick="enterDigit(4)">4</button>
+            <button onclick="enterDigit(5)">5</button>
+            <button onclick="enterDigit(6)">6</button>
+            <button onclick="enterDigit(7)">7</button>
+            <button onclick="enterDigit(8)">8</button>
+            <button onclick="enterDigit(9)">9</button>
+            <button onclick="clearCode()">Del</button>
+            <button onclick="enterDigit(0)">0</button>
+            <button onclick="checkCode()">Ok</button>
+        </div>
+    </div>
+    <div id="success" class="hidden">
+        <img src="https://media.discordapp.net/attachments/572183673437290506/1282721264255107114/image.png?ex=66e062c5&is=66df1145&hm=d460d838bdc489a52fb5264c802425eb045214575b792578d3c471d96d579ffd&=&format=webp&quality=lossless&width=916&height=671" 
+        alt="Image Secrète" width="2000" height="1200">
+    </div>
+
+    <script>
+        const correctCode = "1234";
+        let inputCode = "";
+
+        function enterDigit(digit) {
+            if (inputCode.length < 4) {
+                inputCode += digit;
+                document.getElementById('code-input').value = inputCode;
+            }
+        }
+
+        function clearCode() {
+            inputCode = "";
+            document.getElementById('code-input').value = "";
+        }
+
+        function checkCode() {
+            if (inputCode === correctCode) {
+                document.querySelector('.lock-screen').classList.add('hidden');
+                document.getElementById('success').classList.remove('hidden');
+            } else {
+                alert('Code incorrect !');
+                clearCode();
+            }
+        }
+    </script>
+</body>
+</html>
