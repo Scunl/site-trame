@@ -15,27 +15,36 @@ body {
     padding: 20px;
     text-align: center;
     width: 300px;
+    display: flex;
+    flex-direction: column; /* Utiliser une colonne pour aligner les éléments verticalement */
+    align-items: center; /* Centrer les éléments horizontalement */
 }
 
 #code-input {
     font-size: 24px;
     padding: 10px;
     margin-bottom: 20px;
-    width: 100%;
+    width: 80%; /* Réduire la largeur à 80% de la boîte pour centrer */
     text-align: center;
     border: 2px solid #ccc;
     border-radius: 8px;
 }
 
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Créer une grille de 3 colonnes pour les boutons */
+    gap: 10px; /* Espacement entre les boutons */
+}
+
 .keypad button {
     font-size: 20px;
-    margin: 5px;
     padding: 15px;
-    width: 60px;
     border: none;
     border-radius: 50%;
     background-color: #ddd;
     cursor: pointer;
+    width: 60px; /* Taille fixe pour uniformiser les boutons */
+    height: 60px;
 }
 
 .keypad button:hover {
