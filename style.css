@@ -1,4 +1,8 @@
 body {
+    background-image: url('https://cdn.discordapp.com/attachments/572183673437290506/1288764589755990056/c8f9fe81-16ce-448d-bbf9-99b5f4438347.png?ex=66f65f0e&is=66f50d8e&hm=9a94c81f2fe32c26d90fa553a7e3463be2cfcb6a7bc396d36b86c214a6b25b32');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     display: flex;
@@ -17,9 +21,7 @@ body {
     width: 300px;
     display: flex;
     flex-direction: column;
-    /* Utiliser une colonne pour aligner les éléments verticalement */
     align-items: center;
-    /* Centrer les éléments horizontalement */
 }
 
 #code-input {
@@ -36,9 +38,7 @@ body {
 .keypad {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* Créer une grille de 3 colonnes pour les boutons */
     gap: 10px;
-    /* Espacement entre les boutons */
 }
 
 .keypad button {
@@ -49,7 +49,6 @@ body {
     background-color: #ddd;
     cursor: pointer;
     width: 60px;
-    /* Taille fixe pour uniformiser les boutons */
     height: 60px;
 }
 
@@ -64,4 +63,36 @@ body {
 img {
     max-width: 100%;
     height: auto;
+}
+
+#success {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Styles du bouton Retour */
+#success button {
+    background-color: #28a745; /* Couleur verte */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px; /* Arrondi des bords */
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre portée */
+    transition: background-color 0.3s, transform 0.2s ease; /* Animation */
+    margin-top: 20px;
+}
+
+/* Effet de survol du bouton */
+#success button:hover {
+    background-color: #218838; /* Couleur verte plus foncée au survol */
+    transform: scale(1.05); /* Légère agrandissement */
+}
+
+/* Effet de clic sur le bouton */
+#success button:active {
+    background-color: #1e7e34;
+    transform: scale(1); /* Réduction de l'effet d'agrandissement au clic */
 }
